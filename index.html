@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Приди в Себя - Когда есть свободное время?</title>
+<title>Календарь</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -39,17 +39,62 @@
     z-index: 10;
   }
 
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
   .header h1 {
     font-size: 1.15rem;
     font-weight: 700;
     letter-spacing: -0.01em;
-    margin-bottom: 12px;
+  }
+
+  .book-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #2AABEE;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s;
+    box-shadow: 0 1px 3px rgba(42,171,238,0.3);
+  }
+
+  .book-btn:hover { background: #229ED9; }
+
+  .book-btn svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
   }
 
   .legend {
     display: flex;
     flex-wrap: wrap;
     gap: 10px 20px;
+  }
+
+  .hint {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+  }
+
+  .hint svg {
+    width: 14px;
+    height: 14px;
+    vertical-align: -2px;
+    margin: 0 2px;
   }
 
   .legend-item {
@@ -94,8 +139,16 @@
 <body>
 
   <div class="header">
-    <!-- ✏️ Change the title here -->
-    <h1>Приди в Себя - Бронь отдельных комнат</h1>
+    <div class="header-top">
+      <!-- ✏️ Change the title here -->
+      <h1>Приди в Себя - Бронь отдельных комнат</h1>
+
+      <!-- ✏️ Book a room button -->
+      <a class="book-btn" href="https://t.me/pridi_v_sebja_bot" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.97 1.25-5.55 3.67-.53.36-1 .54-1.42.53-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.97-1.73 6.62-2.87 7.95-3.44 3.79-1.58 4.57-1.85 5.08-1.86.11 0 .37.03.54.17.14.12.18.28.2.47-.01.06.01.24 0 .37z"/></svg>
+        Забронировать
+      </a>
+    </div>
 
     <div class="legend">
       <!-- ✏️ Change calendar names here -->
@@ -108,11 +161,18 @@
         <span>Большой стол У кухни</span>
       </div>
     </div>
+
+    <div class="hint">
+      Используйте стрелки
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      в календаре для переключения между неделями
+    </div>
   </div>
 
   <div class="calendar-wrap">
     <iframe
-      src="https://calendar.google.com/calendar/embed?src=17d19e562e8c86c274d4c9e0f9bd4e2745e966b61123a3bd0cdce75718ee5cf3%40group.calendar.google.com&color=%23D50000&src=b9cbec36b27b41ae310010af7bc4577fb2219f6ec476ff4c357616353cd22d27%40group.calendar.google.com&color=%230B8043&hl=ru&wkst=2&mode=WEEK&showCalendars=0&showTitle=0&showPrint=0"
+      src="https://calendar.google.com/calendar/embed?src=17d19e562e8c86c274d4c9e0f9bd4e2745e966b61123a3bd0cdce75718ee5cf3%40group.calendar.google.com&color=%23D50000&src=b9cbec36b27b41ae310010af7bc4577fb2219f6ec476ff4c357616353cd22d27%40group.calendar.google.com&color=%230B8043&hl=ru&wkst=2&showCalendars=0&showTitle=0&showPrint=0"
       loading="lazy"
     ></iframe>
   </div>
